@@ -1,0 +1,403 @@
+{
+  "Uuid": "dd684c37-58b9-41a6-a19d-94d270b5e29c",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Hello_Rapid_Dynamo",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "GPntNode": {
+        "Key": "AnyCAD.CoreNodes.Geometry.GPntNode",
+        "Value": "AnyCAD.CoreNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Range, CoreNodeModels",
+      "Id": "55b555b85e204b8abb6da02359824d34",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "90c83c9937004620b380c36dca053eab",
+          "Name": "start",
+          "Description": "Number or letter to start the sequence at\r\nDefault value: 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "37476e946323485c86ae3c0d7f6e0519",
+          "Name": "end",
+          "Description": "Number or letter to end the sequence at\r\nDefault value: 9",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b73d398a93f442729a6e29dd011742cd",
+          "Name": "step",
+          "Description": "Space between numbers or letters\r\nDefault value: 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "203f89a9ceb6486b9bf48f5396525feb",
+          "Name": "list",
+          "Description": "New list of type: var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Creates a sequence of numbers or letters in the given range"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "bf2061303832469db14569a4bceb3980",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a6ddb879ea2942ff902f33a0651f7810",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "aeaa82bee8854b4698879043eadc9480",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3682bcfa481e4d3bba8ee79029344b20",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "1;\n10;\n1;"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "dc4f3686a63c46c2aa81976a0a656fbc",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "6876a78a354c48ffbe24a69b823e6826",
+          "Name": "z",
+          "Description": "z",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "903c094862bc4ebc9e1e5c9f693ab98c",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "GPntNode.ByCoordinates(0, 0, z);"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "8afee8c40e4d414aa68ce1619908b846",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "aa0f4302fa55451ea2feca3308bf7352",
+          "Name": "center",
+          "Description": "GPntNode\nDefault value : AnyCAD.CoreNodes.Geometry.GPntNode.ByCoordinates(0, 0, 0)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "08463338ec874c9aaf0a47145df7e026",
+          "Name": "radius",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8d0fba73080f40da815c4d6ff367e423",
+          "Name": "GCircleNode",
+          "Description": "GCircleNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "AnyCAD.CoreNodes.Geometry.GCircleNode.ByCenterPointRadius@AnyCAD.CoreNodes.Geometry.GPntNode,double",
+      "Replication": "Auto",
+      "Description": "GCircleNode.ByCenterPointRadius (center: GPntNode = AnyCAD.CoreNodes.Geometry.GPntNode.ByCoordinates(0, 0, 0), radius: double = 1): GCircleNode"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "406a4b01d53145ddbc472584167b7d10",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "ce15be6583b04d2daac34e83fc98a09c",
+          "Name": "circle",
+          "Description": "GCircleNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4db3c92af7534c24851ffeaace5e896b",
+          "Name": "TopoShapeNode",
+          "Description": "TopoShapeNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "AnyCAD.CoreNodes.Geometry.TopoShapeNode.ByGCicle@AnyCAD.CoreNodes.Geometry.GCircleNode",
+      "Replication": "Auto",
+      "Description": "TopoShapeNode.ByGCicle (circle: GCircleNode): TopoShapeNode"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "26d61bacbb2c40c6aa8e9b8b7aecc700",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "7838f2b352f84cf2a77c3fa71ba24ca6",
+          "Name": "topo",
+          "Description": "TopoShapeNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3d3dd3b5d1614694be1d88dffa484253",
+          "Name": "ShapeElementNode",
+          "Description": "ShapeElementNode",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "AnyCAD.CoreNodes.Elements.ShapeElementNode.ByTopoShape@AnyCAD.CoreNodes.Geometry.TopoShapeNode",
+      "Replication": "Auto",
+      "Description": "ShapeElementNode.ByTopoShape (topo: TopoShapeNode): ShapeElementNode"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "203f89a9ceb6486b9bf48f5396525feb",
+      "End": "08463338ec874c9aaf0a47145df7e026",
+      "Id": "c701d2bbae064ea7aa4df9ff80904599",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "203f89a9ceb6486b9bf48f5396525feb",
+      "End": "6876a78a354c48ffbe24a69b823e6826",
+      "Id": "754fd5ff47c448169ef8747f965d7282",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a6ddb879ea2942ff902f33a0651f7810",
+      "End": "90c83c9937004620b380c36dca053eab",
+      "Id": "896dbd17f3c3447db1ef84b3a7c08bbd",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "aeaa82bee8854b4698879043eadc9480",
+      "End": "37476e946323485c86ae3c0d7f6e0519",
+      "Id": "92246312029144d9b0d969f9ef5bde93",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "3682bcfa481e4d3bba8ee79029344b20",
+      "End": "b73d398a93f442729a6e29dd011742cd",
+      "Id": "3cf11dff3c8a4afd98cd169eb9b58edf",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "903c094862bc4ebc9e1e5c9f693ab98c",
+      "End": "aa0f4302fa55451ea2feca3308bf7352",
+      "Id": "486715b5904c4908907f94f8e716f6c4",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8d0fba73080f40da815c4d6ff367e423",
+      "End": "ce15be6583b04d2daac34e83fc98a09c",
+      "Id": "c5cfa2a1785a47109068f7e2919166f5",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4db3c92af7534c24851ffeaace5e896b",
+      "End": "7838f2b352f84cf2a77c3fa71ba24ca6",
+      "Id": "173d95c379a84ce6be425a4b6a8eb176",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.0",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [
+    {
+      "NodeId": "26d61bac-bb2c-40c6-aa8e-9b8b7aecc700",
+      "Binding": {
+        "ByTopoShape_InClassDecl-1_InFunctionScope-1_Instance0_26d61bac-bb2c-40c6-aa8e-9b8b7aecc700": "H4sIAAAAAAAACoXJMQ6AIAwF0Lt0dqB8StXZWxAGElhdZCPc3cSdur3kpUF3e3qrV+mFzjSofiCFSuDDiTKACO9obutlc725MDcsVgUu/qyYG81Vc3eaeeYXmSgmDT4BAAA="
+      }
+    }
+  ],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.0.3.7597",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": 42.58694839477539,
+      "EyeY": 23.266376495361328,
+      "EyeZ": -0.5535030364990234,
+      "LookX": -42.43150329589844,
+      "LookY": -8.229276657104492,
+      "LookZ": -5.728921890258789,
+      "UpX": 0.0259418785572052,
+      "UpY": 0.999657392501831,
+      "UpZ": 0.0035021970979869366
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "55b555b85e204b8abb6da02359824d34",
+        "Name": "Range",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 223.0,
+        "Y": 524.0
+      },
+      {
+        "Id": "bf2061303832469db14569a4bceb3980",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 23.0,
+        "Y": 282.0
+      },
+      {
+        "Id": "dc4f3686a63c46c2aa81976a0a656fbc",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 370.0,
+        "Y": 271.0
+      },
+      {
+        "Id": "8afee8c40e4d414aa68ce1619908b846",
+        "Name": "GCircleNode.ByCenterPointRadius",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 734.5,
+        "Y": 436.0
+      },
+      {
+        "Id": "406a4b01d53145ddbc472584167b7d10",
+        "Name": "TopoShapeNode.ByGCicle",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1055.5,
+        "Y": 212.0
+      },
+      {
+        "Id": "26d61bacbb2c40c6aa8e9b8b7aecc700",
+        "Name": "ShapeElementNode.ByTopoShape",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1316.5,
+        "Y": 416.0
+      }
+    ],
+    "Annotations": [],
+    "X": 4.714385417553785,
+    "Y": 59.000893581479545,
+    "Zoom": 0.822695359375
+  }
+}

@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <BaseOutputPath>$(SolutionDir)..\bin\$(Platform)</BaseOutputPath>
+    <OutputType>Library</OutputType>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Category.AnyCAD.svg" />
+    <None Remove="Resources\LayoutSpecs.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Category.AnyCAD.svg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\LayoutSpecs.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AnyCAD.Rapid.NET" Version="2022.10.24" />
+    <PackageReference Include="DynamoVisualProgramming.Core" Version="3.0.3.7597" />
+    <PackageReference Include="DynamoVisualProgramming.WpfUILibrary" Version="3.0.3.7597" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\AnyCADWpfCommon\AnyCADWpfCommon.csproj" />
+    <ProjectReference Include="..\AnyCAD.Rapid.Dynamo.Services\AnyCAD.Rapid.Dynamo.Services.csproj" />
+  </ItemGroup>
+    
+</Project>

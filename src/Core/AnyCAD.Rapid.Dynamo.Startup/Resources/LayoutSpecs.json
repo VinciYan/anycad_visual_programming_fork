@@ -1,0 +1,69 @@
+{
+  "sections": [
+    {
+      "text": "default",
+      "iconUrl": "",
+      "elementType": "section",
+      "showHeader": false,
+      "include": [],
+      "childElements": [
+        {
+          "text": "AnyCAD",
+          "iconUrl": "/icons/Category.AnyCAD.svg",
+          "elementType": "category",
+          "include": [],
+          "childElements": [
+            {
+              "text": "Elements",
+              "iconUrl": "",
+              "elementType": "group",
+              "include": [
+                {
+                  "path": "AnyCAD.CoreNodes.AnyCAD.CoreNodes.Elements.ElementNode"
+                },
+                {
+                  "path": "AnyCAD.CoreNodes.AnyCAD.CoreNodes.Elements.ShapeElementNode"
+                }
+              ],
+              "childElements": []
+            },
+            {
+              "text": "Geoemtry",
+              "iconUrl": "",
+              "elementType": "group",
+              "include": [
+                {
+                  "path": "AnyCAD.CoreNodes.AnyCAD.CoreNodes.Geometry.GPntNode"
+                },
+                {
+                  "path": "AnyCAD.CoreNodes.AnyCAD.CoreNodes.Geometry.GCircleNode"
+                },
+                {
+                  "path": "AnyCAD.CoreNodes.AnyCAD.CoreNodes.Geometry.TopoShapeNode"
+                },
+                {
+                  "path": "AnyCAD.CoreNodes.AnyCAD.CoreNodes.Geometry.GBoxNode"
+                },
+                {
+                  "path": "AnyCAD.CoreNodes.AnyCAD.CoreNodes.Geometry.GLineNode"
+                }
+              ],
+              "childElements": []
+            },
+            {
+              "text": "BooleanTool",
+              "iconUrl": "",
+              "elementType": "group",
+              "include": [
+                {
+                  "path": "AnyCAD.CoreNodes.AnyCAD.CoreNodes.BooleanTool.GCutFeatureNode"
+                }
+              ],
+              "childElements": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

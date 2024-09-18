@@ -1,0 +1,30 @@
+{
+  "sections": [
+    {
+      "text": "default",
+      "iconUrl": "",
+      "elementType": "section",
+      "showHeader": false,
+      "include": [],
+      "childElements": [
+        {
+          "text": "AnyCAD",
+          "elementType": "category",
+          "include": [],
+          "childElements": [
+            {
+              "text": "UserElements",
+              "iconUrl": "",
+              "elementType": "group",
+              "include": [
+                {
+                  "path": "AnyCAD.UserNodes.AnyCAD.UserNodes.Elements.UserShapeElementNode"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
